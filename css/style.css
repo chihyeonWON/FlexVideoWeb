@@ -1,18 +1,56 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&display=swap");
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 ul,
 ol,
 li {
-	list-style: none;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
-	outline: 0;
+  text-decoration: none;
+  outline: 0;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background: #333;
+  display: flex;
+}
+
+main header {
+  width: 20%;
+  height: 100%;
+  padding: 10vh 5vw;
+  display: flex;
+  flex-wrap: wrap; /* 세로로 줄 바꿈 되도록 처리 */
+  align-content: space-between; /* 세로축은 상단 하단 양 끝으로 콘텐츠를 배치 */
+  justify-content: center; /* 가로축은 가운데로 배치 */
+  position: relative;
+  z-index: 3; /* section 요소와 aside 팝업 요소보다 위에 배치하기 위해 3을 지정 */
+  border: 10px solid pink;
+}
+
+main nav {
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
+  z-index: 3; /* section 요소와 aside 팝업 요소보다 위에 배치하기 위해 3을 지정 */
+  border: 10px solid aqua;
+}
+
+main section {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  padding-top: 140px;
+  z-index: 1; /* aside 팝업 요소보다 아래에 배치하기 위해 1을 지정 */
+  border: 10px solid yellow;
 }
