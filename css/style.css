@@ -57,9 +57,15 @@ main nav {
   top: 10vh;
   right: 5vw;
   z-index: 3; /* section 요소와 aside 팝업 요소보다 위에 배치하기 위해 3을 지정 */
-  border: 10px solid aqua;
 }
-
+main nav ul {
+  display: flex;
+}
+main nav ul li a {
+  font-size: 18px;
+  color: #bbb;
+  margin-right: 30px;
+}
 main section {
   position: relative;
   width: 80%;
