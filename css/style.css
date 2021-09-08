@@ -141,3 +141,34 @@ main section article .inner figure video {
   object-fit: cover; /* 영상이 figure 영역 안에 꽉 차도록 설정 */
   transform: scale(1.1); /* 영상 가장자리의 여백을 숨기기 위해 약간 확대 */
 }
+main section article:hover {
+  /* article 요소 호버 시 변경 구문 */
+  flex: 1.5; /* 호버된 요소만 너비를 1.5배 증가 */
+  opacity: 1;
+  z-index: 2;
+}
+main section article:hover::before {
+  /* article 요소 호버시 ::before 변경 구문 */
+  left: 0px;
+  opacity: 1;
+}
+main section article:hover .inner .txt {
+  /* article 요소 호버 시 .txt 변경 구문 */
+  width: 75%;
+}
+main section article:hover .inner .txt h2 {
+  /* article 요소 호버 시 h2 변경  구문 */
+  font-size: 5vw;
+  padding-top: 0px;
+}
+main section article:hover .inner .txt h2::after {
+  /* article 요소 호버 시 h2::after 변경 구문 */
+  width: 120px;
+  background: orange;
+}
+main section article:hover .inner figure {
+  /* article 요소 호버 시 figure 변경 구문 */
+  height: 25vh;
+  filter: saturate(120%);
+  transform: translateY(3vh);
+}
