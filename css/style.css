@@ -73,5 +73,53 @@ main section {
   display: flex;
   padding-top: 140px;
   z-index: 1; /* aside 팝업 요소보다 아래에 배치하기 위해 1을 지정 */
-  border: 10px solid yellow;
+}
+main section article {
+  position: relative;
+  flex: 1; /* 모든 article 요소의 너비를 동등하게 적용 */
+  padding: 70px 40px 100px;
+  opacity: 0.6;
+  transition: flex 1s, opacity 1s; /* flex, opacity 속성에만 전환 효과 적용 */
+  z-index: 1; /* 호버되지 않을 시 1 설정 */
+  cursor: pointer;
+}
+
+main section article::before {
+  /*마우스 호버시 왼쪽에서 나타날 가상의 패널 요소 */
+  content: "";
+  display: block;
+  width: 80%;
+  height: 95%;
+  background: #444;
+  position: absolute;
+  top: 0px;
+  left: -200px; /* 마우스 호버 전 article의 왼쪽 바깥쪽에 배치  */
+  opacity: 0; /* 마우스 호버 전 투명하게 숨김 처리 */
+  transition: 1s;
+}
+main section article .inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between; /* .txt와 figure 요소를 위아래 끝에 배치 */
+  position: relative; /* ::befroe 요소 위쪽으로 배치되게 하기 위해 position 처리 */
+}
+main section article .inner .txt {
+  width: 100%;
+  transition: 0.5s; /* 호버 시 전환 효과 처리 */
+}
+main section article .inner .txt h2::after {
+  /* h2 요소 하단 꾸밈 효과 */
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #777;
+  margin-top: 20px;
+  transition: 1.5s; /* 호버 시 전환 효과 처리 */
+}
+main section article .inner .txt p {
+  font: 14px/1.4 "arial";
+  color: #999;
 }
