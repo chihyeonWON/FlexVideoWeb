@@ -214,8 +214,8 @@ main aside figure{
   width:72%;
   height:100%;
 }
-
 main aside figure video{
+  margin-left:100px;
   width:100%;
   height:100%;
   object-fit:cover;
